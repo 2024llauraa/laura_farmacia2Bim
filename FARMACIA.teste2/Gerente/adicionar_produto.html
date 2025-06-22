@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adicionar Produto - Farmácia Sem Volta</title>
+  <link rel="stylesheet" href="produto_form.css" />
+  
+  <!-- FONTES -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chewy&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="top-bar">
+    <div class="left-icons">
+      <img src="./../Img/home-icon.png" alt="Home" id="home-icon" />
+      <img src="./../Img/perfil.png" alt="Usuários" id="users-icon" />
+    </div>
+    <span class="farmacia-titulo">farmacia sem volta</span>
+    <div class="right-user">
+      <span id="username-display"></span>
+      <button id="logout-button" class="logout-button">Sair</button>
+    </div>
+  </header>
+
+  <main class="form-container">
+    <div class="form-card">
+      <h2>Adicionar Novo Produto</h2>
+      
+      <form id="produto-form">
+        <div class="form-group">
+          <label for="nome">Nome do Produto:</label>
+          <input type="text" id="nome" name="nome" required />
+        </div>
+
+        <div class="form-group">
+          <label for="preco">Preço (R$):</label>
+          <input type="number" id="preco" name="preco" step="0.01" min="0" required />
+        </div>
+
+        <div class="form-group">
+          <label for="categoria">Categoria:</label>
+          <select id="categoria" name="categoria" required>
+            <option value="">Selecione uma categoria</option>
+            <option value="Analgésicos">Analgésicos</option>
+            <option value="Antibióticos">Antibióticos</option>
+            <option value="Anti-inflamatórios">Anti-inflamatórios</option>
+            <option value="Antialérgicos">Antialérgicos</option>
+            <option value="Cardiovasculares">Cardiovasculares</option>
+            <option value="Digestivos">Digestivos</option>
+            <option value="Outros">Outros</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="quantidade">Quantidade em Estoque:</label>
+          <input type="number" id="quantidade" name="quantidade" min="0" required />
+        </div>
+
+        <div class="form-group">
+          <label for="descricao">Descrição:</label>
+          <textarea id="descricao" name="descricao" rows="3"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="imagem">Imagem do Produto:</label>
+          <input type="file" id="imagem" name="imagem" accept="image/*" />
+          <div class="upload-info">
+            <small>Selecione uma imagem do seu computador (máximo 5MB)</small>
+          </div>
+          <div class="ou-separador">
+            <span>OU</span>
+          </div>
+          <input type="text" id="caminho-imagem" name="caminho-imagem" placeholder="Digite o nome da imagem (ex: paracetamol.png)" />
+          <small>Para usar uma imagem já existente na pasta Img</small>
+        </div>
+
+        <div class="preview-container" id="preview-container" style="display: none;">
+          <img id="preview-image" alt="Preview" />
+        </div>
+
+        <div class="form-buttons">
+          <button type="submit" class="btn-salvar">Adicionar Produto</button>
+          <button type="button" class="btn-cancelar" onclick="voltarParaLista()">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <!-- Caixa de mensagem de feedback -->
+  <div class="mensagem-popup" id="mensagem-popup">
+    <span id="mensagem-texto"></span>
+    <button onclick="fecharMensagem()" class="btn-fechar">x</button>
+  </div>
+
+  <script src="adicionar_produto.js"></script>
+</body>
+</html>
+

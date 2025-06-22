@@ -1,0 +1,415 @@
+/* Reset e base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'PT Sans', sans-serif;
+  background-color: #f5f5f5;
+}
+
+/* Topo da página */
+.top-bar {
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  height: 8vh;
+}
+
+.left-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.left-icons img {
+  height: 4vh;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.left-icons img:hover {
+  transform: scale(1.1);
+}
+
+.farmacia-titulo {
+  font-family: "Chewy", cursive;
+  font-size: 28px;
+  color: #444;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  text-align: center;
+  flex: 1;
+}
+
+/* Lista do carrinho */
+.lista-carrinho {
+  padding: 4vh 5vw;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.item-carrinho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 1vh;
+  padding: 2vh;
+  margin-bottom: 2vh;
+  background-color: #fff;
+  box-shadow: 0 0.5vh 1vh rgba(0, 0, 0, 0.05);
+}
+
+.item-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 0.8vh;
+  border: 1px solid #ccc;
+   flex-shrink: 0;
+}
+
+.item-info {
+  flex: 1;
+  margin-left: 2vw;
+}
+
+.item-nome {
+  font-size: 2.4vh;
+  font-weight: bold;
+  color: #333;
+}
+
+.item-preco {
+  font-size: 2.2vh;
+  color: #666;
+}
+
+.remover-item {
+  background: none;
+  border: none;
+  font-size: 2.4vh;
+  color: red;
+  cursor: pointer;
+}
+
+/* Resumo */
+.resumo {
+  border-top: 1px solid #ccc;
+  padding: 3vh 5vw;
+  background-color: #fff;
+  font-size: 2.4vh;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.resumo p {
+  margin: 1vh 0;
+}
+
+.resumo button {
+  margin-top: 2vh;
+  padding: 1.8vh 4vw;
+  font-size: 2.5vh;
+  font-weight: bold;
+  background-color: #2c7;
+  color: white;
+  border: none;
+  border-radius: 1vh;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.resumo button:hover {
+  background-color: #28a745;
+}
+
+/* Formas de pagamento */
+.formas-pagamento,
+.pagamento-form,
+#dinheiro-form,
+.qrcode-area {
+  margin: 6vh auto;
+  padding: 5vh 4vw;
+  max-width: 600px;
+  width: 90vw;
+  background-color: #fff;
+  border: 0.3vh solid #ddd;
+  border-radius: 1.5vh;
+  box-shadow: 0 0.8vh 2vh rgba(0, 0, 0, 0.1);
+  font-size: 2.4vh;
+}
+
+/* Títulos */
+.formas-pagamento h3 {
+  font-size: 3vh;
+  margin-bottom: 3vh;
+  color: #2c3e50;
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-bottom: 2vh;
+  font-size: 2.4vh;
+  color: #333;
+  cursor: pointer;
+}
+
+input[type="radio"] {
+  transform: scale(1.5);
+  margin-right: 1vw;
+}
+
+/* Form dinheiro */
+#dinheiro-form p {
+  margin-bottom: 3vh;
+  text-align: center;
+}
+
+#dinheiro-form button {
+  padding: 2vh 3vw;
+  font-size: 2.4vh;
+  font-weight: bold;
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 1vh;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 3vh;
+}
+
+#dinheiro-form button:hover {
+  background-color: #219150;
+}
+
+#resposta-troco label {
+  font-size: 2.4vh;
+  display: block;
+  margin-bottom: 1vh;
+}
+
+#resposta-troco input {
+  width: 60%;
+  font-size: 2.4vh;
+  padding: 1.5vh;
+  margin-top: 1vh;
+  margin-bottom: 2vh;
+}
+
+/* Cartão */
+.pagamento-form input,
+.pagamento-form select {
+  width: 100%;
+  padding: 2vh 2vw;
+  margin-bottom: 2.5vh;
+  font-size: 2.4vh;
+  border: 0.2vh solid #ccc;
+  border-radius: 1vh;
+}
+
+.pagamento-form button {
+  padding: 2vh 3vw;
+  font-size: 2.4vh;
+  font-weight: bold;
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 1vh;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 1.5vh;
+}
+
+.pagamento-form button:hover {
+  background-color: #219150;
+}
+
+/* Pix */
+#qrcode {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2vh;
+}
+
+.qrcode-area button {
+  padding: 2vh 3vw;
+  font-size: 2.4vh;
+  font-weight: bold;
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 1vh;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.qrcode-area button:hover {
+  background-color: #249b55;
+}
+
+.nome-valor {
+  margin-top: 2vh;
+  font-size: 2.2vh;
+  text-align: center;
+  color: #333;
+}
+
+/* Popups */
+.popup-remover,
+.mensagem-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 3vh 4vw;
+  border-radius: 1vh;
+  box-shadow: 0 0 1vh rgba(0, 0, 0, 0.2);
+  display: none;
+  z-index: 1000;
+  font-size: 2vh;
+  text-align: center;
+  max-width: 90vw;
+  width: 400px;
+}
+
+.popup-remover .botoes,
+.mensagem-popup .botoes {
+  margin-top: 2vh;
+  display: flex;
+  justify-content: center;
+  gap: 2vw;
+}
+
+.popup-remover button,
+.mensagem-popup button {
+  padding: 1vh 2vw;
+  font-size: 2vh;
+  border: none;
+  border-radius: 1vh;
+  cursor: pointer;
+}
+
+/* Botão fechar */
+.btn-fechar {
+  position: absolute;
+  top: 1vh;
+  right: 1vw;
+  background: transparent;
+  border: none;
+  font-size: 2.2vh;
+  cursor: pointer;
+}
+
+/* Mensagem de login obrigatório */
+.mensagem-login-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.mensagem-login-content {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 90%;
+}
+
+.mensagem-login-content h3 {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.mensagem-login-content p {
+  color: #666;
+  margin-bottom: 25px;
+  font-size: 16px;
+}
+
+.botoes-login {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.btn-login {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.btn-login:hover {
+  background-color: #45a049;
+}
+
+.btn-cancelar-login {
+  background-color: #f44336;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-cancelar-login:hover {
+  background-color: #da190b;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .top-bar {
+    flex-direction: column;
+    gap: 10px;
+    height: auto;
+    padding: 10px;
+  }
+
+  .lista-carrinho,
+  .resumo {
+    padding: 3vh 4vw;
+  }
+
+  .resumo button {
+    width: 100%;
+  }
+
+  .formas-pagamento,
+  .pagamento-form,
+  #dinheiro-form,
+  .qrcode-area {
+    padding: 4vh 4vw;
+  }
+
+  .pagamento-form button {
+    width: 100%;
+  }
+
+  .popup-remover,
+  .mensagem-popup {
+    width: 90%;
+  }
+}

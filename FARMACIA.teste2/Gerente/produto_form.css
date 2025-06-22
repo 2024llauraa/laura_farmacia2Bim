@@ -1,0 +1,365 @@
+/* Estilos para formulários de produto */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "PT Sans", sans-serif;
+  background-color: #f5f5f5;
+}
+
+/* Header */
+.top-bar {
+  background-color: #ffffff;
+  border-bottom: 1px solid #ccc;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.left-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.left-icons img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.left-icons img:hover {
+  transform: scale(1.1);
+}
+
+.farmacia-titulo {
+  font-family: "Chewy", cursive;
+  font-size: 28px;
+  color: #444;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.right-user {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+#username-display {
+  color: #444;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.logout-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.logout-button:hover {
+  background-color: #45a049;
+}
+
+/* Main container */
+.form-container {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+.form-card {
+  background-color: white;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.form-card h2 {
+  color: #333;
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 24px;
+}
+
+/* Form styles */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #4CAF50;
+}
+
+.form-group small {
+  display: block;
+  margin: 8px 0 4px 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Upload styles */
+.upload-info {
+  margin: 8px 0;
+}
+
+.ou-separador {
+  text-align: center;
+  margin: 15px 0;
+  position: relative;
+}
+
+.ou-separador::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #ddd;
+}
+
+.ou-separador span {
+  background-color: white;
+  padding: 0 15px;
+  color: #666;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.mensagem-popup.info {
+  background-color: #2196F3;
+}
+
+/* Preview container */
+.preview-container {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.preview-container img {
+  max-width: 200px;
+  max-height: 200px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Form buttons */
+.form-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.btn-salvar,
+.btn-excluir,
+.btn-cancelar {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  min-width: 150px;
+}
+
+.btn-salvar {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.btn-salvar:hover {
+  background-color: #45a049;
+}
+
+.btn-excluir {
+  background-color: #f44336;
+  color: white;
+}
+
+.btn-excluir:hover {
+  background-color: #d32f2f;
+}
+
+.btn-cancelar {
+  background-color: #9E9E9E;
+  color: white;
+}
+
+.btn-cancelar:hover {
+  background-color: #757575;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+  background-color: white;
+  margin: 15% auto;
+  padding: 30px;
+  border-radius: 15px;
+  width: 400px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+.modal-content h3 {
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 20px;
+}
+
+.modal-content p {
+  margin-bottom: 25px;
+  color: #666;
+  font-size: 16px;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.btn-confirm, .btn-cancel {
+  padding: 10px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-confirm {
+  background-color: #f44336;
+  color: white;
+}
+
+.btn-confirm:hover {
+  background-color: #d32f2f;
+}
+
+.btn-cancel {
+  background-color: #9E9E9E;
+  color: white;
+}
+
+.btn-cancel:hover {
+  background-color: #757575;
+}
+
+/* Mensagem popup */
+.mensagem-popup {
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  z-index: 1001;
+  max-width: 300px;
+}
+
+.mensagem-popup.error {
+  background-color: #f44336;
+}
+
+.btn-fechar {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  float: right;
+  margin-left: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .top-bar {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .form-container {
+    margin: 20px;
+    padding: 10px;
+  }
+
+  .form-card {
+    padding: 20px;
+  }
+
+  .form-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-salvar,
+  .btn-excluir,
+  .btn-cancelar {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .modal-content {
+    width: 90%;
+    margin: 20% auto;
+  }
+}
+

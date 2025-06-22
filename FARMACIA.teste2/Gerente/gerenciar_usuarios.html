@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gerenciar Usuários - Farmácia Sem Volta</title>
+  <link rel="stylesheet" href="gerenciar_usuarios.css" />
+  
+  <!-- FONTES -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chewy&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="top-bar">
+    <div class="left-icons">
+      <img src="./../Img/home-icon.png" alt="Home" id="home-icon" />
+      <img src="./../Img/cesta.png" alt="Visão Cliente" id="client-view-icon" title="Ir para visão do cliente" />
+    </div>
+    <span class="farmacia-titulo">farmacia sem volta</span>
+    <div class="right-user">
+      <span id="username-display"></span>
+      <button id="logout-button" class="logout-button">Sair</button>
+    </div>
+  </header>
+
+  <main class="usuarios-container">
+    <div class="header-section">
+      <h2>Gerenciamento de Usuários</h2>
+      <button id="add-user-button" class="add-button">+</button>
+    </div>
+
+    <div class="usuarios-table-container">
+      <table class="usuarios-table" id="usuarios-table">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Função</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody id="usuarios-tbody">
+          <!-- Usuários serão carregados aqui pelo JavaScript -->
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <!-- Modal para adicionar usuário -->
+  <div class="modal" id="add-user-modal">
+    <div class="modal-content">
+      <h3>Adicionar Novo Usuário</h3>
+      <form id="add-user-form">
+        <div class="form-group">
+          <label for="user-nome">Nome:</label>
+          <input type="text" id="user-nome" name="nome" required>
+        </div>
+        <div class="form-group">
+          <label for="user-email">Email:</label>
+          <input type="email" id="user-email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="user-senha">Senha:</label>
+          <input type="password" id="user-senha" name="senha" required>
+        </div>
+        <div class="form-group">
+          <label for="user-confirmar">Confirmar Senha:</label>
+          <input type="password" id="user-confirmar" name="confirmar" required>
+        </div>
+        <div class="form-group">
+          <label for="user-role">Função:</label>
+          <select id="user-role" name="role" required>
+            <option value="cliente">Cliente</option>
+            <option value="gerente">Gerente</option>
+          </select>
+        </div>
+        <div class="modal-buttons">
+          <button type="submit" class="btn-confirm">Adicionar</button>
+          <button type="button" id="cancel-add-user" class="btn-cancel">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal de confirmação de exclusão -->
+  <div class="modal" id="delete-modal">
+    <div class="modal-content">
+      <h3>Confirmar Exclusão</h3>
+      <p>Certeza que gostaria de excluir este usuário?</p>
+      <div class="modal-buttons">
+        <button id="confirm-delete" class="btn-confirm">Sim</button>
+        <button id="cancel-delete" class="btn-cancel">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Caixa de mensagem de feedback -->
+  <div class="mensagem-popup" id="mensagem-popup">
+    <span id="mensagem-texto"></span>
+    <button onclick="fecharMensagem()" class="btn-fechar">x</button>
+  </div>
+
+  <script src="gerenciar_usuarios.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detalhes do Produto</title>
+  <link rel="stylesheet" href="detalhe.css" />
+  <script defer src="detalhe.js"></script>
+
+  <!-- FONTES -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chewy&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="top-bar"> 
+    <div class="left-icons">
+      <img src="./../Img/home-icon.png" alt="Home" id="home-icon" />
+      <img src="./../Img/cart-icon.png" alt="Carrinho" id="cart-icon" />
+    </div>
+    <div class="right-title">
+      <span class="farmacia-titulo">farmacia sem volta</span>
+    </div>
+  </header>
+
+  <main class="detalhe-produto-container">
+    <img id="detalhe-imagem" src="" alt="Produto" class="detalhe-imagem" />
+    <div class="resumo-container">
+      <h2 id="detalhe-nome" class="nome-detalhe"></h2>
+      <p id="detalhe-preco" class="preco-detalhe"></p>
+      <button id="btn-adicionar">Adicionar</button>
+    </div>
+  </main>
+
+  <!-- Mensagem de confirmação -->
+  <div class="mensagem-popup" id="mensagem-popup">
+    <span id="mensagem-texto">Adicionado ao carrinho com sucesso!</span>
+    <button onclick="fecharMensagem()" class="btn-fechar">x</button>
+  </div>
+</body>
+</html>

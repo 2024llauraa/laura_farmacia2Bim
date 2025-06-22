@@ -1,0 +1,62 @@
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastro</title>
+  <link rel="stylesheet" href="./cadastro.css">
+</head>
+<body>
+  <div class="box">
+    <h2>Cadastro</h2>
+    <form id="cadastroForm">
+      <input type="text" name="nome" placeholder="Nome" required><br>
+      <input type="email" name="email" placeholder="Email" required><br>
+      <input type="password" name="senha" placeholder="Senha" required><br>
+      <input type="password" name="confirmar" placeholder="Confirmar Senha" required><br>
+      <button type="submit">Criar Conta</button>
+    </form>
+    <p class="mensagem"><!-- mensagens de erro aparecerão aqui --></p>
+  </div>
+
+  <script>
+    document.getElementById("cadastroForm").addEventListener("submit", async function(event) {
+      event.preventDefault();
+
+      const nome = this.elements.nome.value;
+      const email = this.elements.email.value;
+      const senha = this.elements.senha.value;
+      const confirmar = this.elements.confirmar.value;
+      const mensagemElement = document.querySelector(".mensagem");
+
+      try {
+        const response = await fetch("/api/cadastro", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ nome, email, senha, confirmar })
+        });
+
+        const data = await response.json();
+        console.log("Resposta do servidor:", data); // Adicionado para depuração
+
+        if (data.success) {
+          mensagemElement.style.color = "green";
+          mensagemElement.textContent = data.message;
+          // Redirecionar para a página de login após um pequeno atraso para o usuário ler a mensagem
+          setTimeout(() => {
+            window.location.href = "./../Login/login.html"; 
+          }, 900); // Atraso de 1.5 segundos/diminui
+        } else {
+          mensagemElement.style.color = "red";
+          mensagemElement.textContent = data.message;
+        }
+      } catch (error) {
+        console.error("Erro ao fazer cadastro:", error);
+        mensagemElement.style.color = "red";
+        mensagemElement.textContent = "Erro ao conectar com o servidor.";
+      }
+    });
+  </script>
+</body>
+</html>
+

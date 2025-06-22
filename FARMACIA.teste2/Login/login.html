@@ -1,0 +1,61 @@
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <div class="box">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <input type="email" name="email" placeholder="Email" required><br>
+      <input type="password" name="senha" placeholder="Senha" required><br>
+      <button type="submit">Entrar</button>
+    </form>
+    <a href="./../Cadastro/cadastro.html"><button>Criar Conta</button></a>
+    <p class="mensagem"><!-- mensagens de erro aparecerão aqui --></p>
+  </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", async function(event) {
+      event.preventDefault();
+
+      const email = this.elements.email.value;
+      const senha = this.elements.senha.value;
+      const mensagemElement = document.querySelector(".mensagem");
+
+      try {
+        const response = await fetch("/api/login", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ email, senha })
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          mensagemElement.style.color = "green";
+          mensagemElement.textContent = data.message;
+          
+          // Redirecionar baseado no papel do usuário
+          if (data.usuario.role === "gerente") {
+            window.location.href = "./../Gerente/gerente_produto.html"; // Redirecionar para a página do gerente
+          } else {
+            window.location.href = "./../Tela/index.html"; // Redirecionar para a página principal do cliente
+          }
+        } else {
+          mensagemElement.style.color = "red";
+          mensagemElement.textContent = data.message;
+        }
+      } catch (error) {
+        console.error("Erro ao fazer login:", error);
+        mensagemElement.style.color = "red";
+        mensagemElement.textContent = "Erro ao conectar com o servidor.";
+      }
+    });
+  </script>
+</body>
+</html>
+

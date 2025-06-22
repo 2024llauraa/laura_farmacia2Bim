@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Carrinho</title>
+  <link rel="stylesheet" href="carrinho.css" />
+  
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chewy&family=PT+Sans&display=swap" rel="stylesheet">
+
+  <!-- ✅ Biblioteca correta para QRCode.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+  <!-- Seu script JS DEPOIS da lib do QRCode -->
+  <script defer src="carrinho.js"></script>
+</head>
+<body>
+  
+  <header class="top-bar">
+    <div class="left-icons">
+      <img src="./../Img/home-icon.png" alt="Home" id="home-icon" />
+    </div>
+     </div>
+    <span class="farmacia-titulo">farmacia sem volta</span>
+    <div class="right-title">
+  </header>
+
+  <main id="lista-carrinho" class="lista-carrinho"></main>
+
+  <section class="resumo">
+    <p id="subtotal">Subtotal: R$ 0,00</p>
+    <p>Frete: R$ 3,00</p>
+    <p id="total">Total com frete: R$ 3,00</p>
+    <button id="btn-finalizar">Escolher forma de pagamento</button>
+  </section>
+
+  <div id="formas-pagamento" style="display: none;" class="formas-pagamento">
+    <h3>Escolha a forma de pagamento:</h3>
+    <label><input type="radio" name="pagamento" value="dinheiro" onclick="selecionarDinheiro()" /> Dinheiro</label>
+    <label><input type="radio" name="pagamento" value="cartao" onclick="selecionarCartao()" /> Cartão</label>
+    <label><input type="radio" name="pagamento" value="pix" onclick="selecionarPix()" /> Pix</label>
+    
+    <p id="erroPagamento" style="display: none; color: red;">Por favor, selecione uma forma de pagamento.</p>
+  </div>
+  
+  <!-- Dinheiro -->
+  <div id="dinheiro-form" style="display: none;" class="pagamento-form">
+    <p>Você vai precisar de troco?</p>
+    <button onclick="perguntaTroco('sim')">Sim</button>
+    <button onclick="perguntaTroco('nao')">Não</button>
+    <div id="resposta-troco"></div>
+  </div>
+  
+  <!-- Cartão -->
+  <div id="cartao-form" style="display: none;" class="pagamento-form">
+    <input type="text" id="nome-cartao" placeholder="Nome"/>
+    <input type="date" id="data-nascimento" />
+    <input type="text" id="numero-cartao" placeholder="Número do cartão (16 dígitos)" maxlength="16" />
+    <select id="parcelas"></select>
+    <button onclick="validarCartao()">Finalizar Compra</button>
+    <button onclick="cancelarCartao()">Cancelar</button>
+  </div>
+
+  <!-- PIX -->
+  <section id="qrcode-area" class="qrcode-area" style="display: none;"> 
+    <h2>Escaneie o QR Code para pagar com PIX</h2>
+    <div id="qrcode"></div>
+    <br>
+    <button onclick="confirmarPix()">Finalizar Compra</button>
+  </section>
+
+  <!-- Modal para confirmação de remoção -->
+  <div class="popup-remover" id="popup-remover">
+    <span id="texto-remover">Certeza que gostaria de retirar este produto do carrinho?</span>
+    <div class="botoes">
+      <button id="btn-sim">Sim</button>
+      <button id="btn-cancelar">Cancelar</button>
+    </div>
+    <button class="btn-fechar" onclick="fecharMensagem()">x</button>
+  </div>
+
+  <!-- Mensagem de ação -->
+  <div class="mensagem-popup" id="mensagem-popup">
+    <span id="mensagem-texto"></span>
+    <button onclick="fecharMensagem()" class="btn-fechar">X</button>
+  </div>
+
+</body>
+</html>

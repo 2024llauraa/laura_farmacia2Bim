@@ -1,0 +1,126 @@
+[
+  {
+    "id": 1,
+    "nome": "Paracetamol",
+    "preco": 8.5,
+    "categoria": "Analgésicos",
+    "imagem": "paracetamol.png",
+    "descricao": "Analgésico e antitérmico"
+  },
+  {
+    "id": 2,
+    "nome": "Ibuprofeno",
+    "preco": 15.98,
+    "categoria": "Anti-inflamatórios",
+    "imagem": "ibuprofeno.png",
+    "descricao": "Anti-inflamatório não esteroidal"
+  },
+  {
+    "id": 4,
+    "nome": "Aspirina",
+    "preco": 9.9,
+    "categoria": "Analgésico",
+    "imagem": "aspirina.png",
+    "descricao": "Ácido acetilsalicílico"
+  },
+  {
+    "id": 5,
+    "nome": "Omeprazol",
+    "preco": 15.6,
+    "categoria": "Protetor gástrico",
+    "imagem": "omeprazol.png",
+    "descricao": "Inibidor da bomba de prótons"
+  },
+  {
+    "id": 6,
+    "nome": "Losartana",
+    "preco": 18.4,
+    "categoria": "Anti-hipertensivo",
+    "imagem": "losartana.png",
+    "descricao": "Bloqueador dos receptores da angiotensina"
+  },
+  {
+    "id": 7,
+    "nome": "Enalapril",
+    "preco": 14.2,
+    "categoria": "Anti-hipertensivo",
+    "imagem": "enalapril.png",
+    "descricao": "Inibidor da ECA"
+  },
+  {
+    "id": 8,
+    "nome": "Sinvastatina",
+    "preco": 23,
+    "categoria": "Digestivos",
+    "imagem": "sinvastatina.png",
+    "descricao": "Redutor de colesterol"
+  },
+  {
+    "id": 9,
+    "nome": "Loratadina",
+    "preco": 11.5,
+    "categoria": "Antialérgico",
+    "imagem": "loratadina.png",
+    "descricao": "Anti-histamínico"
+  },
+  {
+    "id": 10,
+    "nome": "Amoxicilina",
+    "preco": 25.8,
+    "categoria": "Antibiótico",
+    "imagem": "amoxicilina.png",
+    "descricao": "Antibiótico de amplo espectro"
+  },
+  {
+    "id": 11,
+    "nome": "Azitromicina",
+    "preco": 32.4,
+    "categoria": "Antibiótico",
+    "imagem": "azitromicina.png",
+    "descricao": "Antibiótico macrolídeo"
+  },
+  {
+    "id": 12,
+    "nome": "Clonazepam",
+    "preco": 28.9,
+    "categoria": "Ansiolítico",
+    "imagem": "clonazepam.png",
+    "descricao": "Benzodiazepínico"
+  },
+  {
+    "id": 13,
+    "nome": "Hirudoid",
+    "preco": 38.99,
+    "categoria": "Anti-inflamatórios",
+    "imagem": "hirudoid.webp",
+    "descricao": "Pomada anti-inflamatória",
+    "estoque": 0
+  },
+  {
+    "id": 14,
+    "nome": "Dipirona",
+    "preco": 8.99,
+    "categoria": "Analgésicos",
+    "imagem": "dipirona.png",
+    "descricao": "Comprimido analgésisco",
+    "estoque": 0
+  },
+  {
+    "id": 15,
+    "nome": "Ciclo 21",
+    "preco": 20,
+    "categoria": "Outros",
+    "imagem": "anticoncepicional.png-1750434597038-790864690.jpg",
+    "descricao": "Anticoncepcional",
+    "estoque": 0
+  },
+  {
+    "id": 16,
+    "nome": "Neosoro",
+    "preco": 7.3,
+    "categoria": "Outros",
+    "imagem": "neosoro-1750554480680-618978316.png",
+    "descricao": "Descongestionante das vias aéreas",
+    "estoque": 0
+  }
+]

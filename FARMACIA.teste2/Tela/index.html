@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Farmácia Sem Volta</title>
+  <link rel="stylesheet" href="index.css" />
+  
+  <!-- FONTES -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chewy&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="top-bar"> <!--Define o cabeçalho visual da página com a classe top-bar -->
+    <div class="left-icons">
+      <img src="./../Img/home-icon.png" alt="Home" id="home-icon" />
+      <img src="./../Img/cart-icon.png" alt="Carrinho" id="cart-icon" />
+      <img src="./../Img/adm.png" alt="Voltar para Gerente" id="manager-view-icon" title="Voltar para visão do gerente" style="display: none;" />
+    </div>
+    <span class="farmacia-titulo">farmacia sem volta</span>
+    <div class="right-title">
+      <span id="username-display" style="display: none;"></span>
+      <a href="./../Login/login.html" id="login-button" class="login-button">Login</a>
+      <button id="logout-button" class="login-button" style="display: none;">Sair</button>
+    </div>
+  </header>
+
+  <main class="produtos-container">
+    <!-- Produtos serão carregados aqui pelo JavaScript -->
+  </main>
+
+  <!-- Caixa de mensagem de confirmação -->
+  <div class="mensagem-popup" id="mensagem-popup">
+    <span id="mensagem-texto">Adicionado ao carrinho com sucesso!</span>
+    <button onclick="fecharMensagem()" class="btn-fechar">x</button>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>

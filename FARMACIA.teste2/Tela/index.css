@@ -1,0 +1,196 @@
+/* Reset e configurações básicas */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "PT Sans", sans-serif;
+  background-color: #f5f5f5;
+}
+
+/* Topo da página */
+.top-bar {
+  background-color: #ffffff;
+  border-bottom: 1px solid #ccc;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Ícones à esquerda */
+.left-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.left-icons img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.left-icons img:hover {
+  transform: scale(1.1);
+}
+
+/* Título central */
+.center-title {
+  flex: 1;
+  text-align: center;
+}
+
+.farmacia-titulo {
+  font-family: "Chewy", cursive;
+  font-size: 28px;
+  color: #444;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Botão de login/logout */
+.login-button, .logout-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.login-button:hover, .logout-button:hover {
+  background-color: #45a049;
+}
+
+/* Container dos produtos */
+.produtos-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Cada produto */
+.produto {
+  background-color: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.produto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.produto-imagem {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  pointer-events: none;
+}
+
+.nome-produto {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-top: 8px;
+  pointer-events: none;
+}
+
+.preco {
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  font-size: 18px;
+  color: #27ae60;
+  font-weight: bold;
+  pointer-events: none;
+}
+
+/* Botão vermelho com + */
+.botao-adicionar {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  z-index: 10;
+}
+
+.botao-adicionar:hover {
+  background-color: #c0392b;
+  transform: scale(1.1);
+}
+
+.botao-adicionar span {
+  pointer-events: none;
+}
+
+/* Caixa de mensagem (popup) */
+.mensagem-popup {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  z-index: 1001;
+  max-width: 300px;
+  display: none;
+}
+
+.mensagem-popup.error {
+  background-color: #f44336;
+}
+
+.btn-fechar {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  float: right;
+  margin-left: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .top-bar {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .produtos-container {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+  }
+}

@@ -195,6 +195,8 @@ function validarCartao() {
   if (!/^[A-Za-z\s]+$/.test(nome)) return alert("Algo está errado no nome!");
   if (!nascimento) return alert("Algo está errado na data de nascimento!");
   if (!/^\d{16}$/.test(numero)) return alert("Algo está errado no número do cartão!");
+  if (!validarCartaoLuhn(numero)) return alert("Número do cartão inválido!");
+
 
   alert("Pronto, sua compra foi finalizada com sucesso!");
   carrinho = [];
@@ -318,3 +320,28 @@ function esconderFormas() {
   document.getElementById("cartao-form").style.display = "none";
   document.getElementById("qrcode-area").style.display = "none";
 }
+
+// Função para validar cartão de crédito usando o Algoritmo de Luhn
+function validarCartaoLuhn(numeroCartao) {
+  let soma = 0;
+  let dobrar = false;
+
+  // Remove espaços e hífens do número do cartão
+  numeroCartao = numeroCartao.replace(/\s/g, "").replace(/-/g, "");
+
+  for (let i = numeroCartao.length - 1; i >= 0; i--) {
+    let digito = parseInt(numeroCartao.charAt(i), 10);
+
+    if (dobrar) {
+      digito *= 2;
+      if (digito > 9) {
+        digito = digito % 10 + Math.floor(digito / 10);
+      }
+    }
+    soma += digito;
+    dobrar = !dobrar;
+  }
+  return soma % 10 === 0;
+}
+
+
